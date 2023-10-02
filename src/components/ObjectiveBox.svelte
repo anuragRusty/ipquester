@@ -7,7 +7,7 @@ export let input_text;
 <div class="objective">
     <div class="head text">OBJECTIVE</div>
     <div class="info text">
-      <Typewriter>
+     <Typewriter>
      {input_text}
     </Typewriter>
   </div>
@@ -20,21 +20,22 @@ export let input_text;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
   }
 
   .head{
-    font-size: 40px;
+    font-size: 2em;
     font-weight: bolder;
   }
 
   .info{
-    font-size: larger;
+    font-size: 1.2em;
   }
 
   .objective{
     border: solid 2px black;
     border-radius: 10px;
-    width: 66%;
+    width: 50%;
     aspect-ratio: 2/1;
     display: flex;
     flex-direction: column;

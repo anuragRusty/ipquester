@@ -23,7 +23,7 @@
 
 <style>
     .container{
-        font-size:60px;
+        font-size:3em;
         color:#f2f2f2;
         margin-left: 35px;
         margin-right: 35px;
@@ -44,7 +44,7 @@
     }
    
     .progress-text{
-        font-size: 35px;
+        font-size: 0.7em;
     }
 
     .progress-bar{

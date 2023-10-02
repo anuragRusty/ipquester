@@ -12,4 +12,13 @@ body{
     background-color: #87CEEB;
     font-family: 'VT323';
     font-size: 22px;
+    color: #f2f2f2;
+}
+
+button{
+    font-family: 'VT323';
+    color: #f2f2f2;
+    background-color: rgba(1, 1, 1, 0);
+    border: none;
+    outline: none;
 }
