@@ -94,14 +94,15 @@
         .menu-box{
             width: 95%;
             height: auto;
+            aspect-ratio: 3/4.75;
         }
 
         .title{
-         font-size: 200%;
+         font-size: 300%;
        }
 
        .option{
-        font-size: 130%;
+        font-size: 200%;
       }
 
       .all-options{

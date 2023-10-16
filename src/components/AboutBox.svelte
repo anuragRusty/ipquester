@@ -25,7 +25,7 @@
     
 .head{
    font-size: 200%;
-   font-weight: 200;
+   font-weight: 400;
    padding-top: 15px;
    padding-bottom: 5px;
  }
@@ -36,13 +36,13 @@
 
  @media(max-width:768px){
     .head {
-      font-size: 110%;
-      padding-bottom: 5px;
-      padding-top: 5px;
+      font-size: 120%;
+      padding-bottom: 7px;
+      padding-top: 7px;
     }
 
     .text{
-    font-size: 65%;
+    font-size: 85%;
    }
  }
     </style>
