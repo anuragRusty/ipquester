@@ -36,13 +36,13 @@
 
  @media(max-width:768px){
     .head {
-      font-size: 120%;
-      padding-bottom: 7px;
-      padding-top: 7px;
+      font-size: 130%;
+      padding-bottom: 5px;
+      padding-top: 5px;
     }
 
     .text{
-    font-size: 85%;
+    font-size: 90%;
    }
  }
     </style>
