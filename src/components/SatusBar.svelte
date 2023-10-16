@@ -16,71 +16,84 @@
   </div>  
   <div class="level box">LEVEL {levels}</div>
   <div class="score">
-    <div class="coin box"></div>
-    <div class="coin-text">x{coins}</div>
+    <div class="score-count">0000000</div>
+    <div class="coin-count">
+      <div class="coin box"></div>
+      <div class="coin-text">x{coins}</div>
+   </div>
  </div>
 </div>
 
 <style>
-    .container{
-        font-size:3em;
-        color:#f2f2f2;
-        margin-left: 35px;
-        margin-right: 35px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-between;
-    }
+   .container {
+  font-size: 3em;
+  color: #f2f2f2;
+  margin: 10px 35px;
+  display: flex;
+  justify-content: space-between;
+}
 
-    .box{
-        width: calc(33% - 35px);
-    }
+.box {
+  width: calc(33% - 35px);
+}
 
-    .progress{
-        display: flex;
-        flex-direction: column;
-        padding-top: 25px;
-    }
-   
-    .progress-text{
-        font-size: 0.7em;
-    }
+.progress {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+}
 
-    .progress-bar{
-      border: solid 2px black;
-      border-radius: 5px;
-      width: 256px;
-      height: 32px;
-      padding: 5px;
-    }
+.progress-text {
+  font-size: 0.7em;
+}
 
-    .color-bar{
-      display: flex;
-      border-radius: 3px;
-      height: 100%;
-      flex-direction: column;
-    }
+.progress-bar {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 256px;
+  height: 32px;
+  padding: 5px;
+}
 
-    .light-color-bar{
-        height:70%;
-        background-color: #3ed546;
-    }
+.color-bar {
+  display: flex;
+  border-radius: 3px;
+  height: 100%;
+  flex-direction: column;
+}
 
-    .dark-color-bar{
-        height:30%;
-        background-color: #37b53e;
-    }
+.light-color-bar {
+  height: 70%;
+  background-color: #3ed546;
+}
 
-    .score,.level,.progress-bar   {
-        display: flex;
-        align-items: center;
-    }
-    
-    .coin{
-        background-image: url(../assets/ipo_coin.gif);
-        width:48px;
-        height:48px;
-    }
-    
+.dark-color-bar {
+  height: 30%;
+  background-color: #37b53e;
+}
+
+.level,
+.progress-bar {
+  display: flex;
+  align-items: center;
+}
+
+.coin {
+  background-image: url(../assets/ipo_coin.gif);
+  width: 48px;
+  height: 48px;
+  scale:0.66;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+}
+
+.coin-count {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.66em;
+}
+
 </style>

@@ -1,27 +1,48 @@
 <script>
-import {fade} from "svelte/transition";
+    import {fade} from "svelte/transition";
 </script>
 
 <div class="container" in:fade>
-<b>About the Game</b>
-<div>"IP Quester" is an educational adventure game developed by Anurag Kumar Singh, Subhashini Subhi, Anjalita Kumari, Rohini Kumari, Ankit Raj, Tuhin Mandal, guided by Team's mentor Prof.Saunak Bhattacharya.</div>
-<b>Game Concept</b>
-<div>Explore intellectual property through dynamic queries and choices, shaping your unique story.</div>
-<b>Gameplay</b>
-<div>Navigate challenges, make choices, and grasp copyrights, trademarks, patents, and designs.</div>
-<b>Education</b>
-<div>"IP Quester" raises IP protection awareness, offering practical knowledge for anyone.</div>
+  <div class="head">About the Game</div>
+  <div class="text">"IP Quester" is an educational adventure game developed by Anurag Kumar Singh, Subhashini Subhi, Anjalita Kumari, Rohini Kumari, Ankit Raj, Tuhin Mandal, guided by Team's mentor Prof.Saunak Bhattacharya.</div>
+  <div class="head">Game Concept</div>
+  <div class="text">Explore intellectual property through dynamic queries and choices, shaping your unique story.</div>
+  <div class="head">Gameplay</div>
+  <div class="text">Navigate challenges, make choices, and grasp copyrights, trademarks, patents, and designs.</div>
+  <div class="head">Education</div>
+  <div class="text">"IP Quester" raises IP protection awareness, offering practical knowledge for anyone.</div>
 </div>
+
 <style>
-    .container{
-        width: 85%;
-        height: 85%;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+.container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#000;
+}
+    
+.head{
+   font-size: 200%;
+   font-weight: 200;
+   padding-top: 15px;
+   padding-bottom: 5px;
+ }
+
+ .text{
+    font-size: 100%;
+ }
+
+ @media(max-width:768px){
+    .head {
+      font-size: 110%;
+      padding-bottom: 5px;
+      padding-top: 5px;
     }
 
-    b{
-        font-size: 1.3em;
-    }
-</style>
+    .text{
+    font-size: 65%;
+   }
+ }
+    </style>
