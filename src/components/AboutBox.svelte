@@ -39,6 +39,7 @@
       font-size: 130%;
       padding-bottom: 5px;
       padding-top: 5px;
+      font-weight: 590;
     }
 
     .text{

@@ -1,6 +1,11 @@
 <script>
     import { fade } from "svelte/transition";
     import AboutBox from "./AboutBox.svelte";
+    import OptionsBox from "./OptionsBox.svelte";
+    import LeaderBoard from "./LeaderBoard.svelte";
+    import LoadProfile from "./LoadProfile.svelte";
+    import NewProfile from "./NewProfile.svelte";
+    
     let stack = [];
     let title = "MENU";
 
@@ -29,6 +34,14 @@
        </div>
       {:else if title === "ABOUT"}
       <AboutBox/>
+      {:else if title === "OPTIONS"}
+      <OptionsBox/>
+      {:else if title === "LEADERBOARD"}
+      <LeaderBoard/>
+      {:else if title === "LOAD PROFILE"}
+      <LoadProfile/>
+      {:else if title === "NEW PROFILE"}
+      <NewProfile/>
       {/if}
       {#if title !== "MENU"}
       <div class="back-option" in:fade>
@@ -91,17 +104,17 @@
     }
 
     @media(max-width:768px){
-        .menu-box{
+       .menu-box{
             width: 95%;
             height: auto;
             aspect-ratio: 3/4.75;
         }
 
-        .title{
+      .title{
          font-size: 300%;
        }
 
-       .option{
+      .option{
         font-size: 200%;
       }
 
