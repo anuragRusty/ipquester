@@ -6,6 +6,9 @@
     let age;
     let gender = ""; //male,female
 
+    let new_password = "";
+    let confirm_password = "";
+
     let msg = "player ID already exist!";
 </script>
     
@@ -23,6 +26,10 @@
         <option value="female">Female</option>
         <option value="others">Others</option>
       </select>
+      <div class="label">ENTER PASSWORD</div>
+      <input class="input" type="password" bind:value={new_password}>
+      <div class="label">CONFIRM PASSWORD</div>
+      <input class="input" type="password" bind:value={confirm_password}>
       <button class="option">CREATE PROFILE</button>
       <div class="msg-box">{msg}</div>
      </div>
@@ -65,7 +72,7 @@
     .input{
         background-color: transparent;
         border-radius: 5px;
-        font-size: 1em;
+        font-size: 100%;
         font-family: 'VT323';
         border: 2px solid black;
     }
@@ -79,6 +86,14 @@
     @media(max-width:768px){
         .option{
             font-size: 200%;
+        }
+
+        .inputs{
+            gap: 5px;
+        }
+
+        .input{
+            font-size: 75%;
         }
     }
     </style>

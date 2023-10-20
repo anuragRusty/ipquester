@@ -5,17 +5,18 @@
     import LeaderBoard from "./LeaderBoard.svelte";
     import LoadProfile from "./LoadProfile.svelte";
     import NewProfile from "./NewProfile.svelte";
-    
+    import {gameState} from "./store";
+
     let stack = [];
-    let title = "MENU";
+    let title = "PROFILE"; // MENU,PROFILE,LOAD PROFILE,NEW PROFILE,ABOUT,
 
     function handleClick(btn){
        title = btn;
-       stack.push(btn);
+       stack = [...stack,btn];
     }
 
     function handleBack(){
-       stack.pop();
+       stack = stack.slice(0,stack.length-1);
        if(stack.length === 0)
          title = "MENU";
     }
@@ -24,10 +25,15 @@
 <div class="container" in:fade>
   <div class="menu-box">
       <div class="title">{title}</div>
-      {#if title === "MENU"}
+      {#if title === "MENU" || title === "PROFILE"}
         <div class="all-options" in:fade>
+          {#if title === "MENU"}
           <button class="option" on:click={() => handleClick("NEW PROFILE")}>NEW PROFILE</button>
           <button class="option" on:click={() => handleClick("LOAD PROFILE")}>LOAD PROFILE</button>
+          {:else if title === "PROFILE"}
+          <button class="option" on:click={() => $gameState = "Running"}>CONTINUE</button>
+          <button class="option" on:click={() => $gameState = "Objective"}>NEW GAME</button>
+          {/if}
           <button class="option" on:click={() => handleClick("LEADERBOARD")}>LEADERBOARD</button>
           <button class="option" on:click={() => handleClick("OPTIONS")}>OPTIONS</button>
           <button class="option" on:click={() => handleClick("ABOUT")}>ABOUT</button>
@@ -43,7 +49,7 @@
       {:else if title === "NEW PROFILE"}
       <NewProfile/>
       {/if}
-      {#if title !== "MENU"}
+      {#if stack.length > 0}
       <div class="back-option" in:fade>
       <button class="option" on:click={handleBack}>BACK</button>
      </div>

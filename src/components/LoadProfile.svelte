@@ -1,7 +1,10 @@
 <script>
-const Profiles = new Array(100).fill("Dummy Profile");
+import { fade } from "svelte/transition";
+const Profiles = ["Hello","World","Dummy guy","Pro bandha","Tron Guy","Avengers","Batman","Superman","Spiderman Guy","flash Boi"];
 let searchText = "";
+let password = "";
 let selectedIndex;
+let msg = "Password incorrect!"
 </script>
 
 <div class="container">
@@ -11,16 +14,24 @@ let selectedIndex;
      {#each Profiles as profile,i}
        {#if profile.toLowerCase().includes(searchText.trim().toLowerCase())}
          {#if selectedIndex === i}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div class="profile selected" on:click={() => selectedIndex = i}>{profile}{Math.floor(Math.random()*10000)}</div>
          {:else}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div class="profile" on:click={() => selectedIndex = i}>{profile}{Math.floor(Math.random()*10000)}</div>
          {/if}
         {/if}
      {/each}
    </div>
-   <button class="option">LOAD PROFILE</button>
-   <div class="profile-details">
-   </div>
+   <div class="load-profile">
+   {#if selectedIndex !== undefined}
+   <div class=label><b>Profile:</b>{Profiles[selectedIndex]}</div>
+   <div class="label" in:fade><b>Password</b></div>
+   <input class="input" type="password" bind:value={password} in:fade>
+   <button class="option" in:fade>LOAD PROFILE</button>
+   <i>{msg}</i>
+   {/if}
+  </div>
 </div>
 
 <style>
@@ -32,12 +43,12 @@ let selectedIndex;
       justify-content: center;
       align-items: center;
       color:#000;
-      gap: 10px;
+      gap: 12px;
     }
 
     .profiles-list{
       width: 100%;
-      height: 350px;
+      height: 300px;
       overflow-y: scroll;
     }
 
@@ -54,6 +65,18 @@ let selectedIndex;
     border-radius: 7px;
     margin: 7px;
    }
+
+    
+   .input{
+        background-color: transparent;
+        border-radius: 5px;
+        font-family: 'VT323';
+        border: 2px solid black;
+    }
+
+    .input,.label{
+      font-size: 100%;
+    }
 
    .selected{
     border: solid 2px black;
@@ -85,6 +108,17 @@ let selectedIndex;
        scale:1.025;
     }
 
+    .load-profile{
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      height: 33%;
+    }
+
+    i{
+      text-align: center;
+    }
+
     @media(max-width:768px){
 
       .container{
@@ -93,7 +127,7 @@ let selectedIndex;
       }
 
     .head{
-    font-size: 170%;
+    font-size: 140%;
     }
 
     .profile{
@@ -103,6 +137,11 @@ let selectedIndex;
     .profile:hover{
     font-size:130%;
     }
+
+    .profiles-list{
+      height: 300px;
+    }
+
     .search{
      width: 60%;
      font-size: 100%;
