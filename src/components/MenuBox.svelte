@@ -18,7 +18,7 @@
     function handleBack(){
        stack = stack.slice(0,stack.length-1);
        if(stack.length === 0)
-         title = "MENU";
+         title = "PROFILE";
     }
 </script>
 

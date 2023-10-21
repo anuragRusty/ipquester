@@ -74,7 +74,7 @@ export let input_text;
   @media(max-width:768px){
     .objective{
       width: calc(100% - 13px);
-      aspect-ratio: 1/1.35;
+      aspect-ratio: 1/1.5;
     }
 
     .head{

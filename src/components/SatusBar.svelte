@@ -93,7 +93,7 @@
 
 @media(max-width:768px){
   .container{
-    font-size: 160%;
+    font-size: 165%;
     margin: 5px 5px;
   }
 
@@ -110,9 +110,9 @@
   .progress-bar {
     border: 1px solid black;
     border-radius: 3px;
-    width: 90%;
-    height: 28%;
-    padding: 3px;
+    padding: 2px;
+    width: 96%;
+    height: 32%;
   }
 }
 </style>

@@ -4,7 +4,7 @@
 
 <div class="container" in:fade>
   <div class="head">About the Game</div>
-  <div class="text">"IP Quester" is an educational adventure game developed by Anurag Kumar Singh, Subhashini Subhi, Anjalita Kumari, Rohini Kumari, Ankit Raj, Tuhin Mandal, guided by Team's mentor Prof.Saunak Bhattacharya.</div>
+  <div class="text">"IP Quester" is an educational adventure game developed by Anurag Kumar Singh, Subhashini Subhi, Anjalita Kumari, Rohini Kumari, Ankit Raj, Tuhin Mandal, guided by Team's mentors Prof.Saunak Bhattacharya and Mr.Akash Chandra Khan.</div>
   <div class="head">Game Concept</div>
   <div class="text">Explore intellectual property through dynamic queries and choices, shaping your unique story.</div>
   <div class="head">Gameplay</div>
