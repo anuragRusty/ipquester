@@ -3,7 +3,7 @@
 
     let levels = Math.floor(Math.random()*20);
     let coins = Math.floor(Math.random()*10000);
-    let progress = Math.floor(Math.random()*100);
+    let progress = Math.floor(Math.random()*101);
 </script>
 
 <div class="container" in:fade>

@@ -24,7 +24,7 @@
     {/if}
     <div class="name text">{player + Math.floor(Math.random()*10)}</div>
     <div class="score text">{Math.floor(Math.random()*1000000)}</div>
-    <div class="date text">{(Math.floor(Math.random()*30)) + "/" + (Math.floor(Math.random()*12)) + "/" + 2023}</div>
+    <div class="date text">{(Math.floor(Math.random()*30) + 1) + "/" + (Math.floor(Math.random()*11) + 1) + "/" + 2023}</div>
     </div>
 {/each}
  </div>       
@@ -43,15 +43,17 @@
     
   .player{
     font-size: 130%;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
+    width: calc(100% - 30px);
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1.5fr 1fr;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
    }
 
    .btm-border{
-    padding: 10px;
     border-bottom: solid 2px black;
+    margin-bottom: 15px;
    }
 
    b{
@@ -61,7 +63,7 @@
     
    .list{
     width: 100%;
-    height: 450px;
+    height: 460px;
     overflow-y: scroll;
     }
     
@@ -73,8 +75,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
    }
-    
+   
    .rank-top{
     font-weight: bolder;
     }
@@ -95,7 +98,7 @@
     background-color:#cd7f32;
     border: 2px solid #985e24;
     color:#985e24;
-        }
+    }
     
    .list::-webkit-scrollbar {
     width: 18px;
@@ -122,9 +125,14 @@
            font-size: 75%;
         }
 
-        .rank{
+       .rank{
         width: 22px;
         height: 22px;
-        }
+       }
+
+      .btm-border{
+       border-bottom: solid 2px black;
+       margin-bottom: 7px;
+      }
     }
 </style>

@@ -1,14 +1,13 @@
 <script>
 import { fade } from "svelte/transition";
+import {game} from "./store";
 
 const Languages = ["English","Hindi","Bengali","Tamil","Telugu"];
-let soundEnabled = true;
-let selectedLang = "English";
 let msg = " ";
 
 function handleReset(){
-  soundEnabled = true;
-  selectedLang = "English";
+  $game.sound = true;
+  $game.language = "English";
   msg = "RESETED TO DEFAULT!";
   setTimeout(() => msg = " ",1500);
 }
@@ -23,14 +22,14 @@ function handleSave(){
   <div class="all-options">
     <div class="language">
     <label for="language-select">SELECT LANGUAGE</label>
-    <select id="langauge-select" bind:value={selectedLang}>
+    <select id="langauge-select" bind:value={$game.language}>
         {#each Languages as language}
         <option value={language}>{language}</option>
         {/each}
     </select>
 
     </div>
-    <button class="option" on:click={() => soundEnabled = !soundEnabled}>SOUND {soundEnabled ? "ON":"OFF"}</button>
+    <button class="option" on:click={() => $game.sound = !$game.sound}>SOUND {$game.sound ? "ON":"OFF"}</button>
     <button class="option" on:click={handleReset}>RESET</button>
     <button class="option" on:click={handleSave}>SAVE</button>
   </div>
@@ -39,13 +38,7 @@ function handleSave(){
 
 <style>
 .container{
-    width: 80%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color:#000;
+    color: black;
     gap:50px;
 }
 

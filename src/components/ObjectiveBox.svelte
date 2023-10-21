@@ -1,7 +1,7 @@
 <script>
 import Typewriter from 'svelte-typewriter';
 import { fade } from 'svelte/transition';
-import {gameState} from "./store";
+import {game} from "./store";
 
 export let input_text;
 </script>
@@ -15,7 +15,7 @@ export let input_text;
     </Typewriter>
   </div>
 <div class="start">
- <button class="option" on:click={() => $gameState = "Running"}>START</button>
+ <button class="option" on:click={() => $game.state = "Running"}>START</button>
 </div>
  </div>
 </div>
@@ -43,8 +43,8 @@ export let input_text;
   }
 
   .objective{
-    width: 50%;
-    aspect-ratio: 2/1.4;
+    width: 66%;
+    aspect-ratio: 2/1.16;
     display: flex;
     flex-direction: column;
     border: solid 2px black;

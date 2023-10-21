@@ -1,3 +1,9 @@
 import { writable } from 'svelte/store';
 
-export let gameState = writable("Waiting"); // Waiting,Menu,Objective,Running,Recap,Bonus;
+const initState = {
+    state:"Waiting",
+    sound:true,
+    language:"English",
+}
+
+export let game = writable(initState);

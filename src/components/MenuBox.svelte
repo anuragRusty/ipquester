@@ -5,7 +5,7 @@
     import LeaderBoard from "./LeaderBoard.svelte";
     import LoadProfile from "./LoadProfile.svelte";
     import NewProfile from "./NewProfile.svelte";
-    import {gameState} from "./store";
+    import {game} from "./store";
 
     let stack = [];
     let title = "PROFILE"; // MENU,PROFILE,LOAD PROFILE,NEW PROFILE,ABOUT,
@@ -31,8 +31,8 @@
           <button class="option" on:click={() => handleClick("NEW PROFILE")}>NEW PROFILE</button>
           <button class="option" on:click={() => handleClick("LOAD PROFILE")}>LOAD PROFILE</button>
           {:else if title === "PROFILE"}
-          <button class="option" on:click={() => $gameState = "Running"}>CONTINUE</button>
-          <button class="option" on:click={() => $gameState = "Objective"}>NEW GAME</button>
+          <button class="option" on:click={() => $game.state = "Running"}>CONTINUE</button>
+          <button class="option" on:click={() => $game.state = "Objective"}>NEW GAME</button>
           {/if}
           <button class="option" on:click={() => handleClick("LEADERBOARD")}>LEADERBOARD</button>
           <button class="option" on:click={() => handleClick("OPTIONS")}>OPTIONS</button>
