@@ -13,11 +13,11 @@ let input = `The standard chunk of Lorem Ipsum used since the 1500s is reproduce
 <TapButton onClick={() => $game.state = "Menu"}/>
 {:else if $game.state === "Menu"}
 <MenuBox/>
-{:else if $game.state === "Running"}
+{:else if $game.state === "Running" || $game.state === "Objective"}
 <SatusBar/>
-{:else if $game.state === "Objective"}
-<SatusBar/>
-<ObjectiveBox input_text={input}/>
+  {#if $game.state === "Objective"}
+   <ObjectiveBox input_text={input}/>
+  {/if}
 {/if}
 </main>
 

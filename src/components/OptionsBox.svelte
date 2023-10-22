@@ -27,7 +27,6 @@ function handleSave(){
         <option value={language}>{language}</option>
         {/each}
     </select>
-
     </div>
     <button class="option" on:click={() => $game.sound = !$game.sound}>SOUND {$game.sound ? "ON":"OFF"}</button>
     <button class="option" on:click={handleReset}>RESET</button>

@@ -1,9 +1,53 @@
 <script>
+    import { onDestroy } from "svelte";
     import { fade } from "svelte/transition";
 
     let levels = Math.floor(Math.random()*20);
-    let coins = Math.floor(Math.random()*10000);
     let progress = Math.floor(Math.random()*101);
+    
+    let temp_score = Math.floor(Math.random()*10000);
+    let score = 0;
+    let score_interval;
+    let temp_coins = Math.floor(Math.random()*1000);
+    let coins = 0;
+    let coin_interval;
+
+    function animateScore(){
+      clearInterval(score_interval);
+      score_interval = setInterval(() => {
+        if(temp_score > 0){
+          temp_score -= 1;
+          score += 1;
+        }else{
+          clearInterval(score_interval);
+        }
+      },1);
+    }
+
+    function animateCoin(){
+      clearInterval(coin_interval);
+      coin_interval = setInterval(() => {
+        if(temp_coins > 0){
+          temp_coins -= 1;
+          coins += 1;
+        }else{
+          clearInterval(coin_interval);
+        }
+      },15);
+    }
+
+    $:{
+      animateScore();
+      animateCoin();
+    }
+
+    function addZeroes(x,nzero){
+      let length = x.toString().length;
+      let zeroes = new Array(nzero-length).fill("0").join("");
+      return zeroes + x;
+    }
+
+    onDestroy(() => {clearInterval(coin_interval); clearInterval(score_interval)});
 </script>
 
 <div class="container" in:fade>
@@ -18,7 +62,7 @@
   </div>  
   <div class="level">LEVEL {levels}</div>
   <div class="score">
-    <div class="score-count">0000000</div>
+    <div class="score-count">{addZeroes(score,8)}</div>
     <div class="coin-count">
       <div class="coin"></div>
       <div class="coin-text">x{coins}</div>

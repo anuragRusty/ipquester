@@ -1,10 +1,10 @@
 <script>
 import { fade } from "svelte/transition";
-const Profiles = ["Hello","World","Dummy guy","Pro bandha","Tron Guy","Avengers","Batman","Superman","Spiderman Guy","flash Boi"];
+const Profiles = ["Hello","World","Dummy guy","Pro Bandha","Tron Guy","Avengers","Batman","Superman","Spiderman Guy","flash Boi","Alex Boi"];
 let searchText = "";
 let password = "";
 let selectedIndex;
-let msg = "Password incorrect!"
+let msg = "Password incorrect!";
 </script>
 
 <div class="container">
@@ -66,7 +66,6 @@ let msg = "Password incorrect!"
     margin: 7px;
    }
 
-    
    .input{
         background-color: transparent;
         border-radius: 5px;
@@ -121,10 +120,10 @@ let msg = "Password incorrect!"
 
     @media(max-width:768px){
 
-      .container{
-      width: 75%;
-      height: 75%;
-      }
+    .container{
+    width: 75%;
+    height: 75%;
+    }
 
     .head{
     font-size: 140%;
