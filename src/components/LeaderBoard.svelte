@@ -1,6 +1,6 @@
 <script>
     import {fade} from "svelte/transition";
-    const Player = new Array(125).fill("Dummy Player");
+    const Player = ["HappyBoy12","worldChamp","DummyGuy435","ProBandha121","OptimusPrime32","Avengers45","Batman675","Superman31","Spiderman345Guy","Flash462Boi","Alex936Boi","AnuragTheRedFox","SubhiTheBrat","TuhinTheJokerJojo","AnkitTheSolidLad","DoramiAnjalita","RisingRohini"];
 </script>
     
 <div class="container" in:fade>
@@ -22,7 +22,7 @@
     {:else}
     <div class="rank text">{i+1}</div>
     {/if}
-    <div class="name text">{player + Math.floor(Math.random()*10)}</div>
+    <div class="name text">{player}</div>
     <div class="score text">{Math.floor(Math.random()*1000000)}</div>
     <div class="date text">{(Math.floor(Math.random()*30) + 1) + "/" + (Math.floor(Math.random()*11) + 1) + "/" + 2023}</div>
     </div>

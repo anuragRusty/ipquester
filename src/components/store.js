@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 const initState = {
-    state:"Waiting",
+    state:"Waiting", //"Objective","Running","Menu","Selection"
     sound:true,
     language:"English",
 }

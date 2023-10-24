@@ -8,7 +8,7 @@
     let temp_score = Math.floor(Math.random()*10000);
     let score = 0;
     let score_interval;
-    let temp_coins = Math.floor(Math.random()*1000);
+    let temp_coins = Math.floor(Math.random()*100);
     let coins = 0;
     let coin_interval;
 
@@ -62,7 +62,7 @@
   </div>  
   <div class="level">LEVEL {levels}</div>
   <div class="score">
-    <div class="score-count">{addZeroes(score,8)}</div>
+    <div class="score-count">{addZeroes(score,7)}</div>
     <div class="coin-count">
       <div class="coin"></div>
       <div class="coin-text">x{coins}</div>
@@ -133,6 +133,10 @@
   justify-content: flex-end;
   align-items: center;
   font-size: 66%;
+}
+
+.level{
+  font-weight: bold;
 }
 
 @media(max-width:768px){

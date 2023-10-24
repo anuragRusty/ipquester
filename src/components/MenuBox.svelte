@@ -32,7 +32,7 @@
           <button class="option" on:click={() => handleClick("LOAD PROFILE")}>LOAD PROFILE</button>
           {:else if title === "PROFILE"}
           <button class="option" on:click={() => $game.state = "Running"}>CONTINUE</button>
-          <button class="option" on:click={() => $game.state = "Objective"}>NEW GAME</button>
+          <button class="option" on:click={() => $game.state = "Selection"}>NEW GAME</button>
           {/if}
           <button class="option" on:click={() => handleClick("LEADERBOARD")}>LEADERBOARD</button>
           <button class="option" on:click={() => handleClick("OPTIONS")}>OPTIONS</button>
