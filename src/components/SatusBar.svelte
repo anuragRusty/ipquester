@@ -55,7 +55,6 @@
     <div class="progress-bar">
       <div class="color-bar" style="width:{progress}%;">
         <div class="light-color-bar"></div>
-        <div class="dark-color-bar"></div>
       </div>
     </div>
     <div class="progress-text">PROGRESS {progress}%</div>
@@ -107,13 +106,24 @@
 }
 
 .light-color-bar {
-  height: 70%;
-  background-color: #3ed546;
+  height: 100%;
+  background-image: linear-gradient(15deg,#3ed546,#37b53e);
+  animation: shine 0.75s linear infinite;
 }
 
-.dark-color-bar {
-  height: 30%;
-  background-color: #37b53e;
+@keyframes shine{
+  0% {
+    background-image: linear-gradient(15deg,#3ed546,#37b53e);
+  }
+  25% {
+    background-image: linear-gradient(45deg,#3ed546,#37b53e);
+  }
+  50% {
+    background-image: linear-gradient(90deg,#3ed546,#37b53e);
+  }
+  75% {
+    background-image: linear-gradient(45deg,#3ed546,#37b53e);
+  }
 }
 
 .coin {
