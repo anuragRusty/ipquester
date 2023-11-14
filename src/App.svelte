@@ -1,4 +1,5 @@
 <script>
+import CharacterSelection from "./components/CharacterSelection.svelte";
 import LevelSelection from "./components/LevelSelection.svelte";
 import MenuBox from "./components/MenuBox.svelte";
 import ObjectiveBox from "./components/ObjectiveBox.svelte";
@@ -14,13 +15,16 @@ let input = `The standard chunk of Lorem Ipsum used since the 1500s is reproduce
 <TapButton onClick={() => $game.state = "Menu"}/>
 {:else if $game.state === "Menu"}
 <MenuBox/>
-{:else if $game.state === "Running" || $game.state === "Objective" || $game.state === "Selection"}
+{:else if $game.state === "Running" || $game.state === "Objective" || $game.state === "LSelection" || $game.state === "CSelection"}
 <SatusBar/>
   {#if $game.state === "Objective"}
    <ObjectiveBox input_text={input}/>
-   {:else if $game.state === "Selection"}
+   {:else if $game.state === "LSelection"}
    <LevelSelection/>
+   {:else if $game.state === "CSelection"}
+   <CharacterSelection/>
   {/if}
 {/if}
 </main>
 
+   
