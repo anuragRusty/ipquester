@@ -69,7 +69,7 @@
     }
 
     .menu-box{
-      width: 40%;
+      width: 630px;
       aspect-ratio: 1/1;
       border: solid 2px black;
       border-radius: 10px;
@@ -81,7 +81,7 @@
     }
 
     .title{
-       font-size: 400%;
+       font-size: 4.8rem;
        color: #000;
     }
 
@@ -92,7 +92,7 @@
     }
 
     .option{
-        font-size: 220%;
+        font-size: 2.5rem;
         width: auto;
         border: 2px solid transparent;
         border-radius: 25px;
@@ -111,17 +111,17 @@
 
     @media(max-width:768px){
        .menu-box{
-            width: 95%;
+            width: 94%;
             height: auto;
-            aspect-ratio: 3/4.75;
+            aspect-ratio: 3/5;
         }
 
       .title{
-         font-size: 300%;
+         font-size: 4rem;
        }
 
       .option{
-        font-size: 200%;
+        font-size: 2.2rem;
       }
 
       .all-options{

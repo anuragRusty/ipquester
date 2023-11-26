@@ -24,14 +24,14 @@
 }
     
 .head{
-   font-size: 200%;
+   font-size: 2.4rem;
    font-weight: 400;
    padding-top: 15px;
    padding-bottom: 5px;
  }
 
  .text{
-    font-size: 100%;
+    font-size: 1.2rem;
  }
 
  @media(max-width:768px){
@@ -43,7 +43,7 @@
     }
 
     .text{
-    font-size: 90%;
+    font-size: 80%;
    }
  }
     </style>

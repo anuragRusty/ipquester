@@ -42,7 +42,7 @@
   }
     
   .player{
-    font-size: 130%;
+    font-size: 1.45rem;
     width: calc(100% - 30px);
     display: grid;
     grid-template-columns: 0.5fr 2fr 1.5fr 1fr;
@@ -51,14 +51,19 @@
     margin-top: 15px;
    }
 
+   .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
    .btm-border{
     border-bottom: solid 2px black;
     margin-bottom: 15px;
    }
 
    b{
-    font-size: 130%;
-    font-weight: 600;
+    font-size: 2.1rem;
    }
     
    .list{
@@ -119,7 +124,7 @@
     @media(max-width:768px){
         .container{
           width: 90%;
-          height: 90%;
+          height: 80%;
         }
         .player{
            font-size: 75%;

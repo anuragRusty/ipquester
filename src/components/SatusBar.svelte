@@ -71,7 +71,7 @@
 
 <style>
 .container {
-  font-size: 350%;
+  font-size: 330%;
   color: #f2f2f2;
   margin: 10px 10px;
   display: flex;

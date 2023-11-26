@@ -51,11 +51,11 @@ function handleSave(){
 }
 
 label,.option{
-  font-size: 220%;
+  font-size: 2.2rem;
 }
 
 select,option{
-  font-size: 120%;
+  font-size: 1.2rem;
   background-color: rgba(242, 242, 242, 0.7);
   border-radius: 8px;
   font-family: 'VT323';
@@ -73,18 +73,18 @@ select,option{
   }
 
   .msg-box{
-    font-size: 150%;
+    font-size: 1.5rem;
     height:10%;
     font-style: italic;
   }
 
   @media(max-width:768px){
     label,.option{
-    font-size: 200%;
+    font-size: 2rem;
     }
 
     select,option{
-    font-size: 100%;
+    font-size: 1rem;
     }
   }
 </style>    

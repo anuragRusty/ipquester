@@ -37,8 +37,8 @@
     
     <style>
      .container{
-        width: 85%;
-        height: 85%;
+        width: 80%;
+        height: 80%;
         display: flex;
         justify-content: center;
      }
@@ -53,14 +53,14 @@
     
      .option{
         margin-top: 20px;
-        font-size: 220%;
+        font-size: 2.5rem;
         color: black;
         border: 1px solid rgba(0,0,0,0);
         border-radius:20px;
     }
     
     .label{
-        font-size: larger;
+        font-size: 1.5rem;
         color:black;
     }
     
@@ -72,7 +72,7 @@
     .input{
         background-color: transparent;
         border-radius: 5px;
-        font-size: 100%;
+        font-size: 1.2rem;
         font-family: 'VT323';
         border: 2px solid black;
     }

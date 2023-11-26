@@ -24,7 +24,6 @@ export let input_text;
   .container{
     width:100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     color: black;
@@ -43,8 +42,8 @@ export let input_text;
   }
 
   .objective{
-    width: 66%;
-    aspect-ratio: 2/1.16;
+    width: 70%;
+    aspect-ratio: 2/1.15;
     display: flex;
     flex-direction: column;
     border: solid 2px black;
@@ -74,7 +73,7 @@ export let input_text;
   @media(max-width:768px){
     .objective{
       width: calc(100% - 13px);
-      aspect-ratio: 1/1.4;
+      aspect-ratio: 1/1.55;
     }
 
     .head{
