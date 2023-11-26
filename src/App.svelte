@@ -1,4 +1,5 @@
 <script>
+    import BottomMenu from "./components/BottomMenu.svelte";
 import CharacterSelection from "./components/CharacterSelection.svelte";
 import LevelSelection from "./components/LevelSelection.svelte";
 import MenuBox from "./components/MenuBox.svelte";
@@ -25,7 +26,10 @@ let input = `The standard chunk of Lorem Ipsum used since the 1500s is reproduce
    {:else if $game.state === "CSelection"}
    <CharacterSelection/>
   {/if}
+  <BottomMenu/>
 {/if}
 </main>
+
+
 
    

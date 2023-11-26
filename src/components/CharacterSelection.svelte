@@ -22,12 +22,17 @@
             name:"Tuhin",
         },
     ];
+
+    function handleClick(){
+        $game.stateStack.push("LSelection");
+        $game.state = $game.stateStack[$game.stateStack.length-1];
+    }
 </script>
     
     <div class="container" in:fade>
        <div class="character-option">
           {#each Characters as character}
-            <button class="char" on:click={() => $game.state = "LSelection"}>
+            <button class="char" on:click={handleClick}>
             <div class="character {character.name.toLowerCase()}"></div>
             <div class="character-name">{character.name.toUpperCase()}</div>
             </button>
@@ -77,7 +82,7 @@
             aspect-ratio: 1/1;
             background-size: cover;
         }
-    
+
         .character-name{
             font-size: 240%;
          }

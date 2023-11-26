@@ -68,12 +68,13 @@ export let input_text;
   .option:hover{
       scale:1.025;
       border: 2px solid black;
+      background-color: rgba(242, 242, 242, 0.7);
   }
 
   @media(max-width:768px){
     .objective{
       width: calc(100% - 13px);
-      aspect-ratio: 1/1.55;
+      aspect-ratio: 1/1.4;
     }
 
     .head{

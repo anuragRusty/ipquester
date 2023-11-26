@@ -8,45 +8,44 @@
     import {game} from "./store";
 
     let stack = [];
-    let title = "PROFILE"; // MENU,PROFILE,LOAD PROFILE,NEW PROFILE,ABOUT,
 
     function handleClick(btn){
-       title = btn;
+       $game.menu = btn;
        stack = [...stack,btn];
     }
 
     function handleBack(){
        stack = stack.slice(0,stack.length-1);
        if(stack.length === 0)
-         title = "PROFILE";
+         $game.menu= "PROFILE";
     }
 </script>
 
 <div class="container" in:fade>
   <div class="menu-box">
-      <div class="title">{title}</div>
-      {#if title === "MENU" || title === "PROFILE"}
+      <div class="title">{$game.menu}</div>
+      {#if $game.menu=== "MENU" || $game.menu=== "PROFILE"}
         <div class="all-options" in:fade>
-          {#if title === "MENU"}
+          {#if $game.menu=== "MENU"}
           <button class="option" on:click={() => handleClick("NEW PROFILE")}>NEW PROFILE</button>
           <button class="option" on:click={() => handleClick("LOAD PROFILE")}>LOAD PROFILE</button>
-          {:else if title === "PROFILE"}
+          {:else if $game.menu=== "PROFILE"}
           <button class="option" on:click={() => $game.state = "Running"}>CONTINUE</button>
-          <button class="option" on:click={() => $game.state = "CSelection"}>NEW GAME</button>
+          <button class="option" on:click={() => {$game.state = "CSelection"; $game.stateStack.push("CSelection");}}>NEW GAME</button>
           {/if}
           <button class="option" on:click={() => handleClick("LEADERBOARD")}>LEADERBOARD</button>
           <button class="option" on:click={() => handleClick("OPTIONS")}>OPTIONS</button>
           <button class="option" on:click={() => handleClick("ABOUT")}>ABOUT</button>
        </div>
-      {:else if title === "ABOUT"}
+      {:else if $game.menu=== "ABOUT"}
       <AboutBox/>
-      {:else if title === "OPTIONS"}
+      {:else if $game.menu=== "OPTIONS"}
       <OptionsBox/>
-      {:else if title === "LEADERBOARD"}
+      {:else if $game.menu=== "LEADERBOARD"}
       <LeaderBoard/>
-      {:else if title === "LOAD PROFILE"}
+      {:else if $game.menu=== "LOAD PROFILE"}
       <LoadProfile/>
-      {:else if title === "NEW PROFILE"}
+      {:else if $game.menu=== "NEW PROFILE"}
       <NewProfile/>
       {/if}
       {#if stack.length > 0}
@@ -101,6 +100,7 @@
     .option:hover{
        border: 2px solid black;
        scale:1.025;
+       background-color: rgba(242, 242, 242, 0.7);
     }
 
     .back-option{

@@ -3,12 +3,13 @@ import { fade } from "svelte/transition";
 import {game} from "./store";
 
 let Ips = ["patents","trademarks","copyrights","designs"];
+
 </script>
 
 <div class="container" in:fade>
    <div class="level-option">
       {#each Ips as ip}
-        <button class="ip" on:click={() => $game.state = "Objective"}>
+        <button class="ip" on:click={() => { $game.stateStack.push("Objective");$game.state = $game.stateStack[$game.stateStack.length-1];}}>
         <div class="icon {ip}"></div>
         <div class="icon-name">{ip.toUpperCase()}</div>
         </button>
