@@ -17,10 +17,10 @@ function handleBack(){
   <div class="btm-menu">
     {#if $game.state == "Running"}
     <button class="btm" on:click={() => $game.state = "Menu"}>MENU</button>
+        <button class="btm" on:click={() => {$game.state = "Store"; $game.stateStack.push("Store");}}>STORE</button>
     {:else}
     <button class="btm" on:click={handleBack}>BACK</button>
     {/if}
-    <button class="btm" on:click={handleBack}>STORE</button>
  </div>
 </div>
 
@@ -58,7 +58,7 @@ function handleBack(){
           left:55%;    
         }
         .btm{
-          font-size: 1.9rem;
+          font-size: 2.5rem;
         }
         .btm-menu{
            gap:5px;
