@@ -37,7 +37,7 @@ let Ips = ["patents","trademarks","copyrights","designs"];
     }
 
     .ip{
-        width: 10%;
+        width: 12%;
         aspect-ratio: 1/1;
         background-color: rgba(255,255,255,0.6);
         border: solid 1px black;
@@ -91,11 +91,12 @@ let Ips = ["patents","trademarks","copyrights","designs"];
         }
 
         .ip{
-          width: calc(25% - 15px);
+          width: calc(25% - 5px);
+          gap:10px;
         }
 
         .level-option{
-          gap: 10px;
+          gap: 5px;
         }
 
         h2{

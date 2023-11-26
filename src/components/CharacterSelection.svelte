@@ -56,7 +56,7 @@
         }
     
         .char{
-            width: 10%;
+            width: 12%;
             aspect-ratio: 1/1;
             background-color: rgba(255,255,255,0.6);
             border: solid 1px black;
@@ -130,15 +130,12 @@
         .character-option{
           flex-wrap: wrap;
           justify-content: left;
+          gap:6px;
         }
 
         .char{
-          width: calc(33% - 10px);
+          width: calc(33% - 3px);
           gap:10px;
-        }
-
-        .level-option{
-          gap: 10px;
         }
 
         h2{
@@ -147,7 +144,7 @@
          }
 
          .character{
-          width: 70%;
+          width: 80%;
          }
 
          .character-name{
