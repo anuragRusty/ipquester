@@ -16,10 +16,10 @@ function handleBack(){
 <div class="container">
   <div class="btm-menu">
     {#if $game.state == "Running"}
-    <button class="btm" on:click={() => $game.state = "Menu"}>MENU</button>
-        <button class="btm" on:click={() => {$game.state = "Store"; $game.stateStack.push("Store");}}>STORE</button>
+    <button class="btm menu" on:click={() => $game.state = "Menu"}></button>
+        <button class="btm store" on:click={() => {$game.state = "Store"; $game.stateStack.push("Store");}}></button>
     {:else}
-    <button class="btm" on:click={handleBack}>BACK</button>
+    <button class="btm back" on:click={handleBack}></button>
     {/if}
  </div>
 </div>
@@ -31,6 +31,7 @@ function handleBack(){
        right: 0;
        direction: rtl;
     }
+
 
     .btm-menu{
          width:100%;
@@ -45,23 +46,40 @@ function handleBack(){
           width: auto;
           border: 2px solid black;
           border-radius: 10px;
-          background-color: rgba(242, 242, 242, 0.6);
+          background-color: rgba(242, 242, 242, 0.7);
+          width: 80px;
+          height: 80px;
+          background-size: cover;
+      }
+
+      .back{
+        background-image: url(../assets/back.png);
+      }
+
+      .store{
+        background-image: url(../assets/store.png);
+      }
+
+      .menu{
+        background-image: url(../assets/menu.png);
       }
   
      .btm:hover{
           scale:1.05;
-          background-color: rgba(242, 242, 242, 0.8);
+          background-color: rgba(242, 242, 242, 0.9);
       }
 
       @media(max-width:768px){
         .container{
-          left:55%;    
+          right: 0;   
         }
         .btm{
-          font-size: 2.5rem;
+          width: 48px;
+          height: 48px;
         }
         .btm-menu{
            gap:5px;
+           padding: 5px;
         }
       }
   </style>

@@ -15,7 +15,7 @@ export let input_text;
     </Typewriter>
   </div>
 <div class="start">
- <button class="option" on:click={() => $game.state = "Running"}>START</button>
+ <button class="option" on:click={() => {$game.state = "Running"; $game.stateStack.push("Running")}}>START</button>
 </div>
  </div>
 </div>
