@@ -93,7 +93,7 @@
             width: 90%;
             height: 50%;
             color:black;
-            font-size: larger;
+            font-size: 120%;
          }
     
         .character-option{
@@ -214,7 +214,7 @@
         }
 
         .about{
-            font-size: large;
+            font-size: 80%;
             height: 50%;
         }
 
