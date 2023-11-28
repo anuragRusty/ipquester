@@ -18,13 +18,13 @@ let input = `The standard chunk of Lorem Ipsum used since the 1500s is reproduce
 <TapButton onClick={() => $game.state = "Menu"}/>
 {:else if $game.state === "Menu"}
 <MenuBox/>
-{:else if $game.state === "Running" || $game.state === "Objective" || $game.state === "LSelection" || $game.state === "CSelection" || $game.state == "Store"}
+{:else if $game.state === "Running" || $game.state === "Objective" || $game.state === "LSelection" || $game.state === "CSelection" || $game.state === "Character" || $game.state == "Store"}
 <SatusBar/>
   {#if $game.state === "Objective"}
    <ObjectiveBox input_text={input}/>
    {:else if $game.state === "LSelection"}
    <LevelSelection/>
-   {:else if $game.state === "CSelection"}
+   {:else if $game.state === "CSelection" || $game.state === "Character"}
    <CharacterSelection/>
    {:else if $game.state === "Store"}
    <StoreBox/>

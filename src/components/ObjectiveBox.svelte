@@ -44,6 +44,7 @@ export let input_text;
 
   .objective{
     width: 70%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     border: solid 2px black;

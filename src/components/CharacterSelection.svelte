@@ -1,63 +1,113 @@
 <script>
-    import { fade } from "svelte/transition";
+    import { fade, scale } from "svelte/transition";
+    import Typewriter from 'svelte-typewriter';
     import {game} from "./store";
     
     const Characters = [
         {
             name:"Anjalita",
+            about:"Just some random text about the game character who is also a part of Game development team. Nothing to woory about is just temporary text for everyone.",
         },
         {
             name:"Subhi",
+            about:"Just some random text about the game character who is also a part of Game development team. Nothing to woory about is just temporary text for everyone.",
         },
         {
             name:"Rohini",
+            about:"Just some random text about the game character who is also a part of Game development team. Nothing to woory about is just temporary text for everyone.",
         },
         {
             name:"Ankit",
+            about:"Just some random text about the game character who is also a part of Game development team. Nothing to woory about is just temporary text for everyone.",
         },
         {
             name:"Anurag",
+            about:"Just some random text about the game character who is also a part of Game development team. Nothing to woory about is just temporary text for everyone.",
         },
         {
             name:"Tuhin",
+            about:"Just some random text about the game character who is also a part of Game development team. Nothing to woory about is just temporary text for everyone.",
         },
     ];
 
-    function handleClick(){
-        $game.stateStack.push("LSelection");
+    function handleClick(char){
+        $game.player.char = char.name;
+        $game.player.about = char.about;
+        $game.stateStack.push("Character"); 
         $game.state = $game.stateStack[$game.stateStack.length-1];
     }
 </script>
-    
     <div class="container" in:fade>
+    {#if $game.state == "CSelection"}
+     <div class="characters-box">
        <div class="character-option">
-          {#each Characters as character}
-            <button class="char" on:click={handleClick}>
+        {#each Characters as character}
+            <button class="char" on:click={() => handleClick(character)}>
             <div class="character {character.name.toLowerCase()}"></div>
             <div class="character-name">{character.name.toUpperCase()}</div>
             </button>
-          {/each}
+        {/each}
        </div>
        <h2>SELECT YOUR GAME CHARCTER</h2>
+    </div>
+    {:else if $game.state == "Character"}
+       <div class="about-box" in:fade>
+         <div class="selected-char {$game.player.char.toLowerCase()}" in:scale></div>
+         <div class="about" in:fade><Typewriter>{$game.player.about}</Typewriter></div>
+         <button class="option" on:click={() => {$game.stateStack.push("LSelection"); $game.state = $game.stateStack[$game.stateStack.length-1]}}>CONTINUE</button>
+       </div>
+    {/if}
     </div>
     
     <style>
         .container{
             width: 100%;
-            height: 70%;
+            height: 100%;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .characters-box{
+            display: flex;
+            width: 100%;
+            height: 75%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
+        .about-box{
+            width: 40%;
+            aspect-ratio: 1/1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: solid 2px black;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.6);
+        }
+
+        .about{
+            width: 90%;
+            height: 50%;
+            color:black;
+            font-size: larger;
+         }
     
         .character-option{
             width: 98%;
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            display: flex;
+            gap: 10px;
             justify-content: center;
+            align-items: center;
+        }
+
+        .selected-char{
+            width: 30%;
+            aspect-ratio: 1/1;
+            background-size: cover;
         }
     
         .char{
@@ -85,6 +135,19 @@
 
         .character-name{
             font-size: 240%;
+         }
+
+         .option{
+        font-size: 220%;
+        width: auto;
+        border: 2px solid transparent;
+        border-radius: 25px;
+        }
+
+        .option:hover{
+         border: 2px solid black;
+         scale:1.025;
+         background-color: rgba(242, 242, 242, 0.7);
          }
 
          .anjalita{
@@ -132,10 +195,23 @@
             width: 95%;
         }
 
+        .characters-box{
+            height: 100%;
+        }
+
         .character-option{
           flex-wrap: wrap;
-          justify-content: left;
-          gap:6px;
+          gap:5px;
+        }
+
+        .about-box{
+            width: 97%;
+            height: 86%;
+        }
+
+        .about{
+            font-size: large;
+            height: 60%;
         }
 
         .char{
