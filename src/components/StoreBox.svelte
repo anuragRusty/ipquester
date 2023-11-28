@@ -22,8 +22,8 @@
     }
 
     .store-box{
-       width:630px;
-       aspect-ratio: 1/1;
+       width: 70%;
+       height: 75%;
        display: flex;
        justify-content: center;
        border: solid 2px black;
