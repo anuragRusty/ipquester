@@ -70,6 +70,7 @@ select,option{
 .option:hover{
     border: 2px solid black;
     scale:1.025;
+    background-color: rgba(242, 242, 242, 0.8);
   }
 
   .msg-box{

@@ -13,10 +13,12 @@
 
 <style>
     .container{
-      width:100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        width:100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: black;
     }
 
     .store-box{
@@ -36,9 +38,8 @@
 
     @media(max-width:768px){
         .store-box{
-            width: 94%;
-            height: auto;
-            aspect-ratio: 3/4.2;
+           width: calc(100% - 13px);
+           height: calc(80% - 15px);
         }
 
       .title{

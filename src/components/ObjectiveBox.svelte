@@ -15,7 +15,7 @@ export let input_text;
     </Typewriter>
   </div>
 <div class="start">
- <button class="option" on:click={() => {$game.state = "Running"; $game.stateStack.push("Running")}}>START</button>
+ <button class="option" on:click={() => {$game.stateStack.push("Running"); $game.state = $game.stateStack[$game.stateStack.length-1];}}>START</button>
 </div>
  </div>
 </div>
@@ -23,6 +23,7 @@ export let input_text;
 <style>
   .container{
     width:100%;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -43,7 +44,6 @@ export let input_text;
 
   .objective{
     width: 70%;
-    aspect-ratio: 2/1.15;
     display: flex;
     flex-direction: column;
     border: solid 2px black;
@@ -74,7 +74,7 @@ export let input_text;
   @media(max-width:768px){
     .objective{
       width: calc(100% - 13px);
-      aspect-ratio: 1/1.4;
+      height: calc(80% - 15px);
     }
 
     .head{

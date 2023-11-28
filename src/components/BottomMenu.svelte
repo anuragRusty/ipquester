@@ -32,7 +32,6 @@ function handleBack(){
        direction: rtl;
     }
 
-
     .btm-menu{
          width:100%;
          display: flex;
@@ -42,7 +41,6 @@ function handleBack(){
     }
   
     .btm{
-          font-size: 3rem;
           width: auto;
           border: 2px solid black;
           border-radius: 10px;
@@ -74,8 +72,8 @@ function handleBack(){
           right: 0;   
         }
         .btm{
-          width: 48px;
-          height: 48px;
+          width:64px;
+          height: 64px;
         }
         .btm-menu{
            gap:5px;
