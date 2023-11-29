@@ -6,7 +6,7 @@ const initState = {
     menu:"PROFILE", // PROFILE,MENU
     sound:true,
     language:"English",
-    player:{name:"",about:""}
+    player:{char:"",about:""}
 }
 
 export let game = writable(initState);

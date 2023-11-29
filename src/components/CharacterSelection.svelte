@@ -78,7 +78,7 @@
         }
 
         .about-box{
-            width: 70%;
+            width: 50%;
             height: 75%;
             display: flex;
             flex-direction: column;
@@ -105,7 +105,7 @@
         }
 
         .selected-char{
-            width: 15%;
+            width: 25%;
             aspect-ratio: 1/1;
             background-size: cover;
         }

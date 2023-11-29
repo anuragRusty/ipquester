@@ -1,5 +1,4 @@
 <script>
-
 import { game } from "./store";
 
 function handleBack(){
