@@ -42,7 +42,7 @@
      <div class="characters-box">
        <div class="character-option">
         {#each Characters as character}
-            <button class="char" on:click={() => handleClick(character)}>
+            <button class="char" on:click={() => handleClick(character)} in:fade>
             <div class="character {character.name.toLowerCase()}"></div>
             <div class="character-name">{character.name.toUpperCase()}</div>
             </button>
