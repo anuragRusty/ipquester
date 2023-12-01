@@ -85,7 +85,7 @@
     </div>
    {:else}
     <div class="icon2 {selectedItem.name.toLowerCase()}" in:scale></div>
-    <div class="name2" in:fade>{selectedItem.name} <img alt="coin" src={Coin} class="coin">x{selectedItem.price} </div>
+    <div class="name2" in:fade>{selectedItem.name}   <img alt="coin" src={Coin} class="coin">x{selectedItem.price} </div>
     <div class="text2" in:fade><Typewriter>{selectedItem.description}</Typewriter></div>
     <div class="control">
       <button class="option">BUY</button>
@@ -227,8 +227,9 @@
          font-size: 140%;
        }
        .text2{
-        font-size: 90%;
-        height: 47%;
+        font-size: 80%;
+        aspect-ratio: 1/1;
+        height: auto;
        }
 
        .count{
