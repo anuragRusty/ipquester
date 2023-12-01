@@ -170,7 +170,7 @@
     border-radius: 3px;
     padding: 2px;
     width: 96%;
-    height: 32%;
+    height: 36%;
   }
 }
 </style>

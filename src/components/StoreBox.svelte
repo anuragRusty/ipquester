@@ -2,60 +2,61 @@
     import Typewriter from 'svelte-typewriter';
     import { fade, scale } from "svelte/transition";
     import {game} from "./store";
+    import Coin from "../assets/ipo_coin.png"
 
     let items = [
       {
          name:"GUIDE BOOK",
-         count:0,
-         price:0,
+         count:4,
+         price:200,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"MAIL",
-         count:0,
-         price:0,
+         count:2,
+         price:150,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"FILE",
-         count:0,
-         price:0,
+         count:72,
+         price:175,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"PEN",
-         count:0,
-         price:0,
+         count:123,
+         price:20,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"STAMPPAPER",
-         count:0,
-         price:0,
+         count:82,
+         price:125,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"STAMP",
-         count:0,
-         price:0,
+         count:12,
+         price:100,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"BOOST",
-         count:0,
-         price:0,
+         count:110,
+         price:110,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"SLICER",
          count:0,
-         price:0,
+         price:1000,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
       {
          name:"REWIND",
-         count:0,
-         price:0,
+         count:34,
+         price:20000,
          description:"In the realm of intellectual property, where ideas dance with innovation and creativity, a guidebook unfolds, offering a roadmap for the curious minds navigating this intricate landscape. Dotting the pages are insights into patents, trademarks, and copyrights, each punctuation mark delineating a crucial aspect of safeguarding ingenuity.",
       },
     ];
@@ -84,8 +85,13 @@
     </div>
    {:else}
     <div class="icon2 {selectedItem.name.toLowerCase()}" in:scale></div>
-    <div class="name2" in:fade>{selectedItem.name}</div>
+    <div class="name2" in:fade>{selectedItem.name} <img alt="coin" src={Coin} class="coin">x{selectedItem.price} </div>
     <div class="text2" in:fade><Typewriter>{selectedItem.description}</Typewriter></div>
+    <div class="control">
+      <button class="option">BUY</button>
+      <button class="count">AVAILABLE {selectedItem.count}</button>
+      <button class="option">USE</button>
+    </div>
    {/if}
   </div>
 </div>
@@ -139,7 +145,7 @@
     }
 
     .icon2{
-      width: 16%;
+      width: 14%;
     }
 
     .item{
@@ -153,6 +159,9 @@
     }
 
     .name{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: larger;
     }
 
@@ -161,8 +170,78 @@
     }
 
     .text2{
-      font-size: 120%;
+      font-size: 110%;
       width: 90%;
+      height: 35%;
+    }
+
+    .control{
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option{
+        font-size: 3rem;
+        width: auto;
+        border: 2px solid transparent;
+        border-radius: 25px;
+    }
+
+    .count{
+      font-size: 180%;
+    }
+
+    .option:hover{
+       border: 2px solid black;
+       scale:1.025;
+       background-color: rgba(242, 242, 242, 0.7);
+    }
+
+    .coin{
+      width: 29px;
+      height: 29px;
+    }
+
+    @media(max-width:768px){
+      .store-box{
+         width: calc(100% - 13px);
+         height: calc(80% - 15px);
+         gap: 5px;
+      }
+
+      .item{
+           width: calc(25% - 10px);
+      }
+
+      .title{
+         font-size: 4rem;
+       }
+
+       .name{
+         font-size: 80%;
+       }
+
+       .name2{
+         font-size: 140%;
+       }
+       .text2{
+        font-size: 90%;
+        height: 47%;
+       }
+
+       .count{
+        font-size: 120%;
+       }
+
+       .coin{
+        width: 23px;
+        height: 23px;
+      }
+       .icon2{
+        width: 25%;
+       }
     }
 
     .mail{
@@ -199,36 +278,6 @@
 
     .stamp{
       background-image: url(../assets/stamp.png);
-    }
-
-    @media(max-width:768px){
-      .store-box{
-         width: calc(100% - 13px);
-         height: calc(80% - 15px);
-         gap: 5px;
-      }
-
-      .item{
-           width: calc(25% - 10px);
-      }
-
-      .title{
-         font-size: 4rem;
-       }
-
-       .name{
-         font-size: 80%;
-       }
-
-       .name2{
-         font-size: 130%;
-       }
-       .text2{
-        font-size: 90%;
-       }
-       .icon2{
-        width: 25%;
-       }
     }
 
 </style>

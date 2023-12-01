@@ -154,10 +154,6 @@
             background-image: url("../assets/anjalita.png");
          }
 
-         .anurag{
-            background-image: url("../assets/anurag.png");
-         }
-
          .subhi{
             background-image: url("../assets/subhi.png");
          }
